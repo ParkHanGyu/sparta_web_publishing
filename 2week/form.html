@@ -2,20 +2,27 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <form action="#" accept-charset="utf-8" name="information" method="get">
-      <fieldset >
-        <legend>개인정보</legend>
-        <div>이름 : <input type="text" name="name" /></div>
-        <div>나이 : <input type="text" name="age" /></div>
-      </fieldset>
-      <br />
-      <fieldset >
-        <legend>기타정보</legend>
-        <div>취미 : <input type="text" name="hobby" /></div>
-        <div>특기 : <input type="text" name="specialty" /></div>
-      </fieldset>
+    <form id="login">
+      <div>아이디 : <input type="input" id="username" /></div>
+      <div>비밀번호 : <input type="password" id="password" /></div>
+      <div>
+        <label><input type="checkbox" id="checkbox"/> 아이디 패스워드 저장</label>
+      </div>
+      <button type="submit">제출</button>
     </form>
+
+    <script>
+      $('#login').submit(function (event) {
+        event.preventDefault();
+        var username = $('#username').val();
+        var password = $('#password').val();
+        var isChecked = !!$('#checkbox:checked').val();
+        alert(username + ' / ' + password + ' / ' + isChecked);
+      });
+    </script>
+    
   </body>
 </html>
